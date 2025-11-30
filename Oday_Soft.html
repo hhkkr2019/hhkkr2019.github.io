@@ -2,103 +2,124 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <title>صفحة مبيعات تجريبية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة الشخصية - عدي العليمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
+            font-family: 'Cairo', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
             color: #333;
         }
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
+        header {
+            background-color: #1f2937;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2em;
+            color: #cbd5e1;
+        }
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        h2 {
+            border-bottom: 2px solid #1f2937;
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        .work, .certificate, .course {
             background-color: #fff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        th, td {
-            padding: 12px;
-            border: 1px solid #ccc;
+        .work h3, .certificate h3, .course h3 {
+            margin: 0 0 10px 0;
+            color: #1f2937;
+        }
+        .work p, .certificate p, .course p {
+            margin: 0;
+        }
+        footer {
             text-align: center;
+            padding: 20px;
+            background-color: #1f2937;
+            color: #fff;
         }
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
-        input {
-            width: 60px;
-            text-align: center;
-        }
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        #total {
-            text-align: center;
-            font-size: 20px;
-            margin-top: 15px;
+        a {
+            color: #3b82f6;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <h1>صفحة مبيعات تجريبية</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>الصنف</th>
-                <th>الكمية</th>
-                <th>السعر</th>
-                <th>الإجمالي</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>صنف 1</td>
-                <td><input type="number" value="0" class="qty"></td>
-                <td class="price">50</td>
-                <td class="lineTotal">0</td>
-            </tr>
-            <tr>
-                <td>صنف 2</td>
-                <td><input type="number" value="0" class="qty"></td>
-                <td class="price">30</td>
-                <td class="lineTotal">0</td>
-            </tr>
-            <tr>
-                <td>صنف 3</td>
-                <td><input type="number" value="0" class="qty"></td>
-                <td class="price">20</td>
-                <td class="lineTotal">0</td>
-            </tr>
-        </tbody>
-    </table>
 
-    <button onclick="calculateTotal()">احسب الإجمالي</button>
-    <div id="total">الإجمالي: 0</div>
+<header>
+    <h1>عدي العليمي</h1>
+    <p>مهندس برمجيات | مطور أنظمة وتطبيقات</p>
+</header>
 
-    <script>
-        function calculateTotal() {
-            const rows = document.querySelectorAll('tbody tr');
-            let total = 0;
+<section>
+    <h2>أعمالي</h2>
+    <div class="work">
+        <h3>نظام محاسبي</h3>
+        <p>تطوير نظام محاسبي متكامل باستخدام Flutter و .NET MAUI وربطه بـ SQL Server و Supabase.</p>
+    </div>
+    <div class="work">
+        <h3>أداة إرسال رسائل واتساب</h3>
+        <p>إنشاء أداة لإرسال رسائل واتساب متعددة مع إمكانية إرسال صور، واستيراد الأرقام من Excel.</p>
+    </div>
+    <div class="work">
+        <h3>متجر إلكتروني</h3>
+        <p>تطوير متجر إلكتروني كامل مع إدارة المنتجات، الطلبات، والعملاء باستخدام .NET MAUI و Supabase.</p>
+    </div>
+</section>
 
-            rows.forEach(row => {
-                const qty = parseInt(row.querySelector('.qty').value) || 0;
-                const price = parseInt(row.querySelector('.price').textContent);
-                const lineTotal = qty * price;
-                row.querySelector('.lineTotal').textContent = lineTotal;
-                total += lineTotal;
-            });
+<section>
+    <h2>الشهادات</h2>
+    <div class="certificate">
+        <h3>شهادة Flutter متقدمة</h3>
+        <p>دورة Flutter متقدمة لتطوير تطبيقات سطح المكتب والهاتف.</p>
+    </div>
+    <div class="certificate">
+        <h3>شهادة أمن سيبراني</h3>
+        <p>دورة متخصصة في أساسيات الأمن السيبراني وحماية الأنظمة.</p>
+    </div>
+</section>
 
-            document.getElementById('total').textContent = "الإجمالي: " + total;
-        }
-    </script>
+<section>
+    <h2>الكورسات</h2>
+    <div class="course">
+        <h3>Unreal Engine Game Development</h3>
+        <p>تعلم تطوير الألعاب باستخدام Unreal Engine وبرمجة C++ للألعاب.</p>
+    </div>
+    <div class="course">
+        <h3>WebRTC & Real-time Applications</h3>
+        <p>كورس عن WebRTC لتطوير تطبيقات الاتصال المباشر بالصوت والصورة.</p>
+    </div>
+    <div class="course">
+        <h3>SQLite & API Integration</h3>
+        <p>تعلم ربط قواعد بيانات SQLite مع API لتخزين واسترجاع البيانات بسرعة وفعالية.</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 عدي العليمي. جميع الحقوق محفوظة.</p>
+    <p>تواصل معي: <a href="mailto:example@email.com">example@email.com</a></p>
+</footer>
+
 </body>
 </html>
